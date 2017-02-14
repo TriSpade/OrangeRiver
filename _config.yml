@@ -1,6 +1,6 @@
 name: OrangeRiver
 email: stevencnix@gmail.com
-description: >  # this means to ignore newlines until "baseurl:"
+description: > # this means to ignore newlines until "baseurl:"
 	This is the project page for the Extreme Orange Intelligent River Project
 	for Clemson University. Intelligent River is a project used to monitor the
 	Savana River throughout South Carolina and Georgia. We plan to use IBM Bluemix

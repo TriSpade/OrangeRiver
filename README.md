@@ -1,2 +1,2 @@
 # OrangeRiver
-website for Intelligent River Extreme Orange Project
+A Class website for the Intelligent River Extreme Orange Project

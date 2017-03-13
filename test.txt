@@ -1,34 +1,3 @@
-Useful Information
-
-Bring fully-charged laptop with Respondus lockdown browser for exam
-He said in class to be able to understand the code for Transportation sort, Merge sort, and Quicksort, and to be able to tell the value(s) of the array(s) being sorted at any step of the code.
-
-
-
-Test Format (less than 25 questions)[FROM LAST YEAR]
-
- 
-
-40% questions from review notes
-
-   - disregard Distributed Shared Memory
-
-40% code reading/correction
-
-   - no syntax correction
-
-   - nothing with array initialization
-
-   - mostly logical corrections with how parallelization works (send, receive, etc.)
-
-   - "what is the final value of this code"
-
-   - doing sequential code only gets half of the points
-
-20% (pseudo) code writing
-
-
-
 Test 1
 
  
@@ -92,8 +61,6 @@ Best speedup = 1/(1/36) = 36
 
 Suppose that 4% of my application is serial. What is my predicted speedup according to Amdahl’s Law on 5 processors?
 S(5) = 5/(4*0.04+1) = 4.31
-
-
 
 
 For each of the following type of parallel computers, briefly describe its architecture, provide its schematic, and name a programming model
@@ -178,7 +145,6 @@ Reduce - takes all data from each process and combines it, result is stored on r
 With a short sentence, describe the role of MPI.COMM_WORLD
 MPI.COMM_WORLD returns a variable which can be used to communicate with other processes and retrieve information about this process.
 
- 
 
 What is “Pleasantly Parallel?” List two characteristics of pleasantly parallel
 “A computation that can obviously be divided into a number of completely different parts, each of which can be executed by a separate process.”
@@ -193,7 +159,6 @@ Assume you have N processors to work on the task.
 Static - Divide the workload into N equal chunks. Processor 0 takes the first chunk, processor 1 takes the second, chunk, ... , processor N-1 takes the N-1th chunk. Has large potential for bottleneck by giving a processor the heaviest workload.
 Cyclic - Divide the workload into N*M equal chunks. Processor 0 takes the first chunk, the 1+Nth chunk, etc. Processor 1 takes the second chunk, the 2+Nth chunk, etc. Has less potential for bottleneck than approach 1.
 Dynamic - Divide the workload into arbitrary number of chunks. Each processor requests the next available task whenever it is done with its current chunk, meaning each processor may not necessarily complete the same number of chunks. Requires more coordination between processes, but generally has the least amount of potential for bottleneck.
-
 
 
 How do the worker processes know when to terminate in the dynamic workload assignment model?
@@ -241,285 +206,12 @@ CONQUER:
 Total = 0.4ns
 
 
-
-
-
-Given 8 processes ranked 0 through 7, sort the following array of integers in ascending order using the odd-even transposition sorting process. You should clearly indicate which integers belong to which process at every single stage of the sorting process. [13, 7, 14, 11, 10, 4, 15, 12, 3, 6, 16, 1, 2, 8, 9, 5]
-0
-
-1
-
-2
-
-3
-
-4
-
-5
-
-6
-
-7
-
-Step 0
-
-13, 7
-
-14, 11
-
-10, 4
-
-15, 12
-
-3, 6
-
-16, 1
-
-2, 8
-
-9, 5
-
-Step 0b
-
-7, 13
-
-11, 14
-
-4, 10
-
-12, 15
-
-3, 6
-
-1, 16
-
-2, 8
-
-5, 9
-
-Step 1
-
-7, 11
-
-13, 4
-
-14, 10
-
-12, 3
-
-15, 1
-
-6, 2
-
-16, 5
-
-8, 9
-
-Step 1b
-
-7, 11
-
-4, 13
-
-10, 14
-
-3, 12
-
-1, 15
-
-2, 6
-
-5, 16
-
-8, 9
-
-Step 2
-
-7,4
-
-11,10
-
-13,3
-
-14,1
-
-12,2
-
-15,5
-
-6,8
-
-16,9
-
-Step 2b
-
-4,7
-
-10,11
-
-3,13
-
-1,14
-
-2,12
-
-5,15
-
-6,8
-
-9,16
-
-Step 3
-
-4,7
-
-10,3
-
-11,1
-
-13,2
-
-14,5
-
-12,6
-
-15,8
-
-9,16
-
-Step 3b
-
-4,7
-
-3,10
-
-1,11
-
-2,13
-
-5,14
-
-6,12
-
-8,15
-
-9,16
-
-Step 4
-
-4,3
-
-7,1
-
-10,2
-
-11,5
-
-13,6
-
-14,8
-
-12,9
-
-15,16
-
-Step 4b
-
-3,4
-
-1,7
-
-2,10
-
-5,11
-
-6,13
-
-8,14
-
-9,12
-
-15,16
-
-Step 5
-
-3,1
-
-4,2
-
-7,5
-
-10,6
-
-11,8
-
-13,9
-
-14,12
-
-15,16
-
-Step 5b
-
-1,3
-
-2,4
-
-5,7
-
-6,10
-
-8,11
-
-9,13
-
-12,14
-
-15,16
-
-Step 6
-
-1,2
-
-3,4
-
-5,6
-
-7,8
-
-10,9
-
-11,12
-
-13,14
-
-15,16
-
-Step 6b
-
-1,2
-
-3,4
-
-5,6
-
-7,8
-
-9,10
-
-11,12
-
-13,14
-
-15,16
-
 Be prepared to answer programming questions of the following type:
  
 
 * Using only MPI_Send and MPI_Recv, implement MPI_Reduce.
 
  
-
 # Implement this code using tree-structure, not sequential
 
 # ie, rank 0 cannot just receive receive from ranks 1-N
@@ -806,4 +498,10 @@ Examples:
 Join chaining - chaining several map reduce jobs
 Job merging -
 Word count example:
+
+IN CLASS NOTES
+
+Shared-file vs File per process
+ -Shared-file(N to 1): single file created and all application tasks write to that file
+ -File per process(N to N): Each application task creates a seperate file, and writes only to that file
 

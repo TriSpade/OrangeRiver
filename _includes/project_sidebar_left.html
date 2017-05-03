@@ -1,14 +1,28 @@
 <div id="sidebar">
 
 	<!-- Sidebar -->
-	{% for post in site.posts offset: 0 limit: 2 %}
 		<section>
-			<h3>{{ post.title }}</h3>
-			{{ post.excerpt }}
-			<footer>
-				<a href="{{ site.baseurl }}{{ post.url }}" class="button">Continue Reading</a>
-			</footer>
+			<h3>Resources</h3>
+			<p>These are the tools we used to produce results:</p>
+			<ul>
+			<li>Intelligent River Systems</li>
+			<li>IBM Bluemix tools</li>
+			<li>Apache Spark</li>
+			<li>Wunderground API</li> 
+			</ul>
 		</section>
-	{% endfor %}
+		<section>
+			<h3>Milestones</h3>
+			<p>These are the milestones we hope to achieve:</p>
+			<ul>
+			<li>Collect Data</li>
+			<li>Organize data</li>
+			<li>Perform Calculations</li>
+			<li>Exhibit Findings</li>
+			<li>Union of Data Sets</li>
+			<li>Prediction of Values</li>
+			<li>Prediction of future sensor readings</li>
+			</ul>
+		</section>
 	
 </div>

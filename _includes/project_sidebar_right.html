@@ -1,14 +1,26 @@
 <div id="sidebar">
 
 	<!-- Sidebar -->
-	{% for post in site.posts offset: 0 limit: 2 %}
 		<section>
-			<h3>{{ post.title }}</h3>
-			{{ post.excerpt }}
-			<footer>
-				<a href="{{ site.baseurl }}{{ post.url }}" class="button">Continue Reading</a>
-			</footer>
+			<h3>Technical Description</h3>
+			<p>We’ve used software development to create the aforementioned infrastructure 
+			capable of supporting real-time decision making with the data received from the 
+			Intelligent River systems. This is a way to evolve the program from the standard 
+			resilient data collection into a more complex system founded on cloud and edge 
+			computing for environmental monitoring and decision making. These decisions should 
+			be made based on analytics of the knowledge derived from historical data.</p>
 		</section>
-	{% endfor %}
+		<section>
+			<h3>Requirements</h3>
+			<p>The User: They who will be doing the environmental monitoring and/or making the analytics-based decisions. (Gov’t)
+			What the User Will Need:</p>
+			<ul>
+			<li>Ability to access historical data</li>
+			<li>Clustering of similar data points (temp, time, etc.)</li>
+			<li>Ability to detect anomalies (flagged)</li>
+			<li>Method for fusion of weather data and events</li> 
+			<li>Prediction of future sensor readings</li>
+			</ul>
+		</section>
 	
 </div>
